@@ -1,0 +1,51 @@
+{
+  "name": "notare-sampler",
+  "version": "1.0.0",
+  "description": "Node.js Performance Observer - Sampler module",
+  "keywords": [
+    "performance",
+    "observe"
+  ],
+  "author": "James M Snell <jasnell@gmail.com>",
+  "license": "MIT",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    "import": "./dist/esm-wrapper.mjs",
+    "require": "./dist/src/index.js"
+  },
+  "scripts": {
+    "build": "tsc && gen-esm-wrapper . dist/esm-wrapper.mjs",
+    "lint": "standardx \"**/*.{ts,mjs,js,cjs}\" | snazzy",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.5",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "gen-esm-wrapper": "^1.0.6",
+    "snazzy": "^8.0.0",
+    "standardx": "^5.0.0",
+    "typescript": "^3.8.3"
+  },
+  "eslintConfig": {
+    "rules": {
+      "semi": [
+        "error",
+        "always"
+      ],
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "error"
+    },
+    "globals": {
+      "SharedArrayBuffer": true,
+      "Atomics": true
+    }
+  },
+  "standardx": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint/eslint-plugin"
+    ]
+  }
+}
